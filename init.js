@@ -9,6 +9,8 @@ function generateData() {
     document.getElementById('surnameOutput').innerText = initPerson.surname;
     document.getElementById('birthYearOutput').innerText = initPerson.year;
     document.getElementById('patronymicOutput').innerText = initPerson.patronymic;
+    document.getElementById('professionOutput').innerText = initPerson.profession;
+
 };
 
 function resetPerson() {
@@ -19,4 +21,5 @@ function resetPerson() {
     document.getElementById('surnameOutput').innerText = '';
     document.getElementById('birthYearOutput').innerText = '';
     document.getElementById('patronymicOutput').innerText = '';
+    document.getElementById('professionOutput').innerText = '';
 }
