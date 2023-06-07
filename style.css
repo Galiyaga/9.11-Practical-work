@@ -1,0 +1,13 @@
+.card-header {
+    background-color: rgb(219, 205, 205);
+    font-weight: 500;
+}
+
+.card-body {
+    background-color: rgb(177, 167, 167);
+}
+
+button {
+    background-color: rgb(159, 110, 110);
+    color: rgb(255, 255, 255);
+}

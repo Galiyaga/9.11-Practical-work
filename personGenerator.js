@@ -21,7 +21,7 @@ const personGenerator = {
         }
     }`,
     firstNameMaleJson: `{
-        "count": 10,
+        "count": 9,
         "list": {     
             "id_1": "Александр",
             "id_2": "Максим",
@@ -37,7 +37,7 @@ const personGenerator = {
     }`,
 
     firstNameFemaleJson: `{
-        "count": 10,
+        "count": 9,
         "list": {     
             "id_1": "Анастасия",
             "id_2": "Мария",
@@ -79,6 +79,27 @@ const personGenerator = {
         }
     },
 
+    randompatronymic: function() {
+        let patronymic = this.randomValue(this.firstNameMaleJson);
+        if (this.person.gender === this.GENDER_MALE) {
+            if (patronymic.endsWith('й')) {
+                return patronymic.replace ('й', 'евич');
+            } else if (patronymic.endsWith('а')) {
+                return patronymic.replace ('а', 'ич');
+            } else {
+                return patronymic + 'ович'
+            };
+        } else {
+            if (patronymic.endsWith('й')) {
+                return patronymic.replace ('й', 'евна');
+            } else if (patronymic.endsWith('а')) {
+                return patronymic.replace ('а', 'ична');
+            } else {
+                return patronymic + 'овна'
+            };
+        }   
+    },
+
 
     getPerson: function () {
         this.person = {};
@@ -87,6 +108,7 @@ const personGenerator = {
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
         this.person.year = this.randomIntNumber(2023, 1970) + ' года рождения';
+        this.person.patronymic = this.randompatronymic();
 
         return this.person;
     },
